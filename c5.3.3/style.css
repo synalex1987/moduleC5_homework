@@ -1,0 +1,36 @@
+.img {
+    width: 200px;
+    margin: 20px;
+    height: 150px;
+    display: block;
+}
+
+.block_images {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+}
+
+.btn_send {
+    padding: 0;
+    margin: 5px 10px;
+    padding: 10px 15px;
+    border-radius: 1px;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: white;
+    background: #315efb;
+    transition: 0.3s;
+}
+
+.inp_number {
+    padding: 0;
+    margin: 5px 10px;
+    padding: 10px 15px;
+    border-radius: 1px;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
