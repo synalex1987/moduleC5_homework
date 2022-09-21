@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem('images')) {
+        displayResult(JSON.parse(localStorage.getItem('images')));
+    }
+})
+
+
 function checkNum() {
     const page = document.querySelector(".inp_page").value;
     const limit = document.querySelector(".inp_limit").value;
@@ -23,21 +30,24 @@ function useRequest(page, limit) {
         .then((images) => {
             displayResult(images);
         })
-        .catch (() => {
+        .catch(() => {
             console.log('error');
         })
+
 }
 
 function displayResult(images) {
     const resultNode = document.querySelector(".block_images");
     html_out = '';
-    images.forEach(element => {
+    //localStorage.clear();
+    for (let index = 0; index < images.length; index++) {
         imgBlock = `
             <div class="block_image">
-            <img src = "${element.download_url}" class="img" />
+            <img src = "${images[index].download_url}" class="img img${index}" />
             </div>
         `
         html_out += imgBlock;
-    });
+    }
     resultNode.innerHTML = html_out;
+    localStorage.setItem('images', JSON.stringify(images));
 }
